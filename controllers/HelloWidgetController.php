@@ -20,4 +20,9 @@ class HelloWidgetController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionDemoModal()
+    {
+        return $this->render('modal');
+    }
 }
