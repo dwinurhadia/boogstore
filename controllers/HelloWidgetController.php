@@ -30,4 +30,19 @@ class HelloWidgetController extends Controller
     {
         return $this->render('button');
     }
+
+    public function actionDemoCarouselCollapse()
+    {
+        return $this->render('carousel_collapse');
+    }
+    
+    public function actionDemoBreadcrumbs()
+    {
+        return $this->render('breadcrumbs');
+    }
+
+    public function actionDemoMasked(Type $var = null)
+    {
+        return $this->render('masked_input');
+    }
 }
