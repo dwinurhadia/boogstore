@@ -47,12 +47,12 @@ AppAsset::register($this);
 
             <div class="container">
                 <?php if (isset($this->blocks['block1'])): ?>
-                    <?= $this->blocks['blocks1'] ?>
+                    <?= $this->blocks['block1'] ?>
                 <?php endif; ?>
 
                 <?= $content ?>
-                <?php if (isset($this->blocks['blocks2'])): ?>
-                    <?= $this->blocks['blocsk2'] ?>
+                <?php if (isset($this->blocks['block2'])): ?>
+                    <?= $this->blocks['block2'] ?>
                 <?php endif; ?>
             </div>
         </div>
