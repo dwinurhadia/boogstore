@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use app\models\Teams;
 
 class HelloDatabaseController extends Controller 
 {
@@ -53,5 +54,37 @@ class HelloDatabaseController extends Controller
                     'query4' => $query4,
                     'query5' => $query5,
                     ]);
+    } 
+
+
+    public function actionDemoActiveQueryIndex()
+    {
+        $query1 = Teams::find()->all();
+        
+                $query2 = Teams::find()->select(['id', 'name', 'country'])->limit(7)->all();
+        
+                $query3 = Teams::find()
+                                ->where(['country' => 'Indonesia'])
+                                ->orderBy('name')
+                                ->all();
+        
+                $query4 = Teams::find()
+                            ->where(['like', 'description', 'dolor'])
+                            ->orderBy('name')
+                            ->all();
+        
+                $query5 = Teams::find()
+                            ->select(['country', 'COUNT(country) as teamsCount'])
+                            ->groupBy('country')
+                            ->orderBy(['teamsCount' => SORT_DESC])
+                            ->all();
+        
+                return $this->render('activerecord-index', [
+                                                                'query1'=>$query1, 
+                                                                'query2'=>$query2,
+                                                                'query3'=>$query3,
+                                                                'query4'=>$query4,
+                                                                'query5'=>$query5,
+                                                            ]);
     }
 }
