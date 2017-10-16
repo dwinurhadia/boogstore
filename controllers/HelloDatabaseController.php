@@ -59,7 +59,7 @@ class HelloDatabaseController extends Controller
 
     public function actionDemoActiveQueryIndex()
     {
-        $query1 = Teams::find()->all();
+                $query1 = Teams::find()->all();
         
                 $query2 = Teams::find()->select(['id', 'name', 'country'])->limit(7)->all();
         
@@ -86,5 +86,16 @@ class HelloDatabaseController extends Controller
                                                                 'query4'=>$query4,
                                                                 'query5'=>$query5,
                                                             ]);
+    }
+
+    public function actionDemoActiveQueryCreate()
+    {
+        $teams = new Teams();
+        $teams->name = 'Persija Jakarta';
+        $teams->country = 'Indonesia';
+        $teams->description = 'Lorem ipsum dolor amet';
+        $teams->save();
+
+        return $this->render('message', ['method'=>__METHOD__]);
     }
 }
