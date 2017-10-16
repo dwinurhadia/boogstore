@@ -33,6 +33,21 @@ class HelloModelFormController extends Controller
 
         return $this->render('index', $data);
     }
+
+    public function actionRegistration()
+    {
+        $model = new RegistrationForm();
+        $data = array (
+                'model' => $model,
+            );
+        if ($model->load(Yii::$app->request->post('RegistrationForm')) && $model->validate()) {
+
+        } else {
+
+        }
+
+        return $this->render('registration', $data);
+    }
 }
 
 ?>
