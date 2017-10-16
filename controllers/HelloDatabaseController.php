@@ -98,4 +98,22 @@ class HelloDatabaseController extends Controller
 
         return $this->render('message', ['method'=>__METHOD__]);
     }
+
+    public function actionDemoActiveQueryEdit()
+    {
+        $teams = Teams::findOne(11);
+        $teams->name = 'PSM Bantul';
+        $teams->description = 'Salah satu tim favorite saya';
+        $teams->save();
+
+        return $this->render('message',['method'=>__METHOD__]);
+    }
+
+    public function actionDemoActiveQueryDelete()
+    {
+        $teams = Teams::findOne(11);
+        $teams->delete();
+
+        return $this->render('message',['method'=>__METHOD__]);
+    }
 }
