@@ -48,6 +48,22 @@ class HelloModelFormController extends Controller
 
         return $this->render('registration', $data);
     }
+
+    public function actionMyProfile()
+    {
+        $model = new MyProfileForm();
+        $data = array (
+                'model'=>$model,
+            );
+
+        if ($model->load(Yii::$app->request->post('MyProfileForm')) && $model->validate()) {
+
+        } else {
+
+        }
+
+        return $this->render('my-profile', $data);
+    }
 }
 
 ?>
