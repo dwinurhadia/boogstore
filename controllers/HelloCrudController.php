@@ -21,6 +21,35 @@ class HelloCrudController extends Controller
         ];
     }
 
-    
+    public function behaviours()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index','detail'],
+                'rules' => [
+                    [
+                        'actions' => ['index','detail'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public function actionIndex()
+    {
+        $query = Teams::find();
+        $teams = $query->orderBy('id')
+                ->all();
+        return $this->render('index', ['teams' => $teams]);
+    }
+
+    public function actionDetail($id)
+    {
+        $team = Teams::findOne(['id'=>$id]);
+        return $this->render('detail', ['team'=>$team]);
+    }
 }
 ?>
