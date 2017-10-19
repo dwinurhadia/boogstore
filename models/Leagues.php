@@ -7,7 +7,7 @@ class Leagues extends ActiveRecord
 {
     public function tableName()
     {
-        return `leagues`;
+        return 'leagues';
     }
 }
 ?>
