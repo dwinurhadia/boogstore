@@ -5,7 +5,7 @@ use yii\db\ActiveRecord;
 
 class Leagues extends ActiveRecord 
 {
-    public function tableName()
+    public static function tableName()
     {
         return 'leagues';
     }

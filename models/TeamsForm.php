@@ -8,6 +8,7 @@ class TeamsForm extends Model
     public $name;
     public $country;
     public $description;
+    public $league_id;
 
     public function attributeLabels()
     {
