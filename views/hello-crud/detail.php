@@ -34,7 +34,7 @@ $this->title = "Hello CRUD";
 
     <div class="col-md-10">
     <div class="col-md-8">
-        <p><b>League</b>: <?php echo $team->league['name'] ?></p>
+        <p><b>League</b>: <?php echo $team->leagues['name'] ?></p>
         <p><b>League</b>: <?php echo $team->country ?></p>
         <p><?php echo $team['description'] ?></p>
     </div>

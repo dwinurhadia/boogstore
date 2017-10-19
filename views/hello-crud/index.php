@@ -48,7 +48,7 @@ $this->title = 'Hello Crud';
                 <?php foreach ($teams as $team ): ?>
                 <tr>
                 <td><?= Html::encode("{$team['name']}") ?></td>
-                <td><?= Html::encode("{$team->league['name']}") ?></td>
+                <td><?= Html::encode("{$team->leagues['name']}") ?></td>
                 <td><?= Html::encode("{$team['country']}") ?></td>
                 <td style="width:15%; text-align:center;">
                     <a href="<?php echo Url::to(['hello-crud/detail', 'id'=>$teams['id']]); ?>" class="btn btn-success btn-sm"><i class="glyphicon glyphicon-eye-open"></a>

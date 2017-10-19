@@ -64,7 +64,7 @@ class HelloCrudController extends Controller
             $team->name = $request->post('TeamsForm')['name'];
             $team->description = $request->post('TeamsForm')['description'];
             $team->country = $request->post('TeamsForm')['country'];
-            $team->league_id = $request->post('TeamsForm')['league_id'];
+            $team->leagues = $request->post('TeamsForm')['league_id'];
             $team->save();
 
             return $this->redirect(Url::to(['hello-crud/index']));
@@ -92,7 +92,7 @@ class HelloCrudController extends Controller
             $team->name = $request->post('TeamsForm')['name'];
             $team->description = $request->post('TeamsForm')['description'];
             $team->country = $request->post('TeamsForm')['country'];
-            $team->league_id = $request->post('TeamsForm')['league_id'];
+            $team->leagues = $request->post('TeamsForm')['league_id'];
             $team->save();
 
             return $this->redirect(Url::to(['hello-crud/detail', 'id'=>$id]));
