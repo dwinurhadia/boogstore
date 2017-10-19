@@ -108,5 +108,19 @@ class HelloCrudController extends Controller
 
         }
     }
+
+    public function actionDelete($id)
+    {
+        $team = Teams::findOne(['id' => $id]);
+        $team->delete();
+
+        return $this->redirect(Url::to(['hello-crud/index']));
+    }
+
+    public function actionDeleteAll()
+    {
+        Teams::deleteAll();
+        return $this->redirect(Url::to(['hello-crud/index']));
+    }
 }
 ?>
